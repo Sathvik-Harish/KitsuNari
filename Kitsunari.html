@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn Japanese</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff; /* Light blue background */
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #ff7f50; /* Coral header */
+      color: white;
+      text-align: center;
+      padding: 2em;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #333;
+    }
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      text-align: center;
+    }
+    nav a:hover {
+      background-color: #ff7f50; /* Coral hover effect */
+      color: black;
+    }
+    .content {
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .flashcard {
+      border: 2px solid #ff7f50; /* Coral border */
+      padding: 20px;
+      margin: 10px;
+      cursor: pointer;
+      background-color: #fef3e8; /* Light peach background */
+      display: inline-block;
+      text-align: center;
+      width: 150px;
+      height: 150px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+      transition: all 0.3s ease;
+    }
+    .flashcard:hover {
+      background-color: #ffebcd; /* Light beige on hover */
+      transform: scale(1.05); /* Slight scale effect */
+    }
+    .flashcard p {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #333;
+    }
+    .flashcard .hidden {
+      display: none;
+      font-size: 1em;
+      color: #ff6347; /* Tomato red for hidden details */
+      margin-top: 10px;
+    }
+    header h1 {
+      font-size: 3em;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    #kanji, #hiragana {
+      background-color: #fff0f5; /* Lavender background */
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      width: 90%;
+      margin: 20px auto;
+      padding: 20px;
+    }
+    h2 {
+      font-size: 2em;
+      color: #ff6347; /* Tomato red for section headers */
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    nav {
+      margin-bottom: 20px;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1em;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+    footer a {
+      color: #ff7f50;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Learn Japanese</h1>
+  </header>
+
+  <nav>
+    <a href="#kanji">Kanji Flashcards</a>
+    <a href="#hiragana">Hiragana Flashcards</a>
+    <a href="#vocabulary">Vocabulary</a>
+    <a href="#quiz">Quiz</a>
+  </nav>
+
+  <!-- Kanji Section -->
+  <div id="kanji" class="content">
+    <h2>Kanji Flashcards</h2>
+    <!-- Kanji Flashcards -->
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>日</p>
+      <p class="hidden">Reading: にち (nichi), Meaning: Sun</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>月</p>
+      <p class="hidden">Reading: つき (tsuki), Meaning: Moon</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>木</p>
+      <p class="hidden">Reading: き (ki), Meaning: Tree</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>水</p>
+      <p class="hidden">Reading: みず (mizu), Meaning: Water</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>火</p>
+      <p class="hidden">Reading: ひ (hi), Meaning: Fire</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>土</p>
+      <p class="hidden">Reading: つち (tsuchi), Meaning: Earth</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>山</p>
+      <p class="hidden">Reading: やま (yama), Meaning: Mountain</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>川</p>
+      <p class="hidden">Reading: かわ (kawa), Meaning: River</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>天</p>
+      <p class="hidden">Reading: てん (ten), Meaning: Heaven</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>名</p>
+      <p class="hidden">Reading: な (na), Meaning: Name</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>口</p>
+      <p class="hidden">Reading: くち (kuchi), Meaning: Mouth</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>目</p>
+      <p class="hidden">Reading: め (me), Meaning: Eye</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>耳</p>
+      <p class="hidden">Reading: みみ (mimi), Meaning: Ear</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>手</p>
+      <p class="hidden">Reading: て (te), Meaning: Hand</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>足</p>
+      <p class="hidden">Reading: あし (ashi), Meaning: Foot/Leg</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>体</p>
+      <p class="hidden">Reading: からだ (karada), Meaning: Body</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>力</p>
+      <p class="hidden">Reading: ちから (chikara), Meaning: Power</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>気</p>
+      <p class="hidden">Reading: き (ki), Meaning: Spirit</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>時</p>
+      <p class="hidden">Reading: じ (ji), Meaning: Time</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>週</p>
+      <p class="hidden">Reading: しゅう (shuu), Meaning: Week</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>年</p>
+      <p class="hidden">Reading: ねん (nen), Meaning: Year</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>今</p>
+      <p class="hidden">Reading: いま (ima), Meaning: Now</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>先</p>
+      <p class="hidden">Reading: さき (saki), Meaning: Previous</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>午</p>
+      <p class="hidden">Reading: ご (go), Meaning: Noon</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>前</p>
+      <p class="hidden">Reading: まえ (mae), Meaning: Front</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>後</p>
+      <p class="hidden">Reading: あと (ato), Meaning: After</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>東</p>
+      <p class="hidden">Reading: ひがし (higashi), Meaning: East</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>西</p>
+      <p class="hidden">Reading: にし (nishi), Meaning: West</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>南</p>
+      <p class="hidden">Reading: みなみ (minami), Meaning: South</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>北</p>
+      <p class="hidden">Reading: きた (kita), Meaning: North</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>話</p>
+      <p class="hidden">Reading: はなし (hanashi), Meaning: Talk</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>言</p>
+      <p class="hidden">Reading: いう (iu), Meaning: Say</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>書</p>
+      <p class="hidden">Reading: かく (kaku), Meaning: Write</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>読</p>
+      <p class="hidden">Reading: よむ (yomu), Meaning: Read</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>聞</p>
+      <p class="hidden">Reading: きく (kiku), Meaning: Hear</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>見</p>
+      <p class="hidden">Reading: みる (miru), Meaning: See</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>買</p>
+      <p class="hidden">Reading: かう (kau), Meaning: Buy</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>売</p>
+      <p class="hidden">Reading: うる (uru), Meaning: Sell</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>食</p>
+      <p class="hidden">Reading: たべる (taberu), Meaning: Eat</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>飲</p>
+      <p class="hidden">Reading: のむ (nomu), Meaning: Drink</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>走</p>
+      <p class="hidden">Reading: はしる (hashiru), Meaning: Run</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>歩</p>
+      <p class="hidden">Reading: あるく (aruku), Meaning: Walk</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>立</p>
+      <p class="hidden">Reading: たつ (tatsu), Meaning: Stand</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>座</p>
+      <p class="hidden">Reading: すわる (suwaru), Meaning: Sit</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>寝</p>
+      <p class="hidden">Reading: ねる (neru), Meaning: Sleep</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>起</p>
+      <p class="hidden">Reading: おきる (okiru), Meaning: Wake up</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>遊</p>
+      <p class="hidden">Reading: あそぶ (asobu), Meaning: Play</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>仕事</p>
+      <p class="hidden">Reading: しごと (shigoto), Meaning: Work</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>休</p>
+      <p class="hidden">Reading: やすむ (yasumu), Meaning: Rest</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>会</p>
+      <p class="hidden">Reading: あう (au), Meaning: Meet</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>社</p>
+      <p class="hidden">Reading: しゃ (sha), Meaning: Company</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>友</p>
+      <p class="hidden">Reading: とも (tomo), Meaning: Friend</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>親</p>
+      <p class="hidden">Reading: おや (oya), Meaning: Parent</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>子</p>
+      <p class="hidden">Reading: こ (ko), Meaning: Child</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>家</p>
+      <p class="hidden">Reading: いえ (ie), Meaning: House</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>部</p>
+      <p class="hidden">Reading: ぶ (bu), Meaning: Part</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>屋</p>
+      <p class="hidden">Reading: や (ya), Meaning: Shop/House</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>町</p>
+      <p class="hidden">Reading: まち (machi), Meaning: Town</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>村</p>
+      <p class="hidden">Reading: むら (mura), Meaning: Village</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>道</p>
+      <p class="hidden">Reading: みち (michi), Meaning: Road</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>空</p>
+      <p class="hidden">Reading: そら (sora), Meaning: Sky</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>海</p>
+      <p class="hidden">Reading: うみ (umi), Meaning: Sea</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>山</p>
+      <p class="hidden">Reading: やま (yama), Meaning: Mountain</p>
+    </div>
+    <!-- Additional 90 Kanji Characters will go here -->
+  </div>
+
+    <!-- More Kanji Flashcards can go here -->
+  </div>
+
+  <!-- Hiragana Section -->
+  <div id="hiragana" class="content">
+    <h2>Hiragana Flashcards</h2>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>あ</p>
+      <p class="hidden">Reading: あ (a), Example: "あさ" (asa) - "morning"</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>い</p>
+      <p class="hidden">Reading: い (i), Example: "いぬ" (inu) - "dog"</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>う</p>
+      <p class="hidden">Reading: う (u), Example: "うみ" (umi) - "sea"</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>え</p>
+      <p class="hidden">Reading: え (e), Example: "えんぴつ" (enpitsu) - "pencil"</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>お</p>
+      <p class="hidden">Reading: お (o), Example: "おかね" (okane) - "money"</p>
+    </div>
+          <!-- か き く け こ -->
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>か</p>
+            <p class="hidden">Reading: か (ka), Example: "かさ" (kasa) - "umbrella"</p>
+          </div>
+        
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>き</p>
+            <p class="hidden">Reading: き (ki), Example: "き" (ki) - "tree"</p>
+          </div>
+        
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>く</p>
+            <p class="hidden">Reading: く (ku), Example: "くるま" (kuruma) - "car"</p>
+          </div>
+        
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>け</p>
+            <p class="hidden">Reading: け (ke), Example: "けしき" (keshiki) - "scenery"</p>
+          </div>
+        
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>こ</p>
+            <p class="hidden">Reading: こ (ko), Example: "こども" (kodomo) - "child"</p>
+          </div>
+        </div>    
+        <div class="flashcard-container">
+          <!-- Starting from さ し す せ そ -->
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>さ</p>
+            <p class="hidden">Reading: さ (sa), Example: "さくら" (sakura) - "cherry blossom"</p>
+          </div>
+        
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>し</p>
+            <p class="hidden">Reading: し (shi), Example: "しろ" (shiro) - "white"</p>
+          </div>
+        
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>す</p>
+            <p class="hidden">Reading: す (su), Example: "すし" (sushi) - "sushi"</p>
+          </div>
+        
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>せ</p>
+            <p class="hidden">Reading: せ (se), Example: "せんせい" (sensei) - "teacher"</p>
+          </div>
+        
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>そ</p>
+            <p class="hidden">Reading: そ (so), Example: "そら" (sora) - "sky"</p>
+          </div>
+        
+          <!-- た ち つ て と -->
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>た</p>
+            <p class="hidden">Reading: た (ta), Example: "たべる" (taberu) - "to eat"</p>
+          </div>
+        
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>ち</p>
+            <p class="hidden">Reading: ち (chi), Example: "ちず" (chizu) - "map"</p>
+          </div>
+        
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>つ</p>
+            <p class="hidden">Reading: つ (tsu), Example: "つき" (tsuki) - "moon"</p>
+          </div>
+        
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>て</p>
+            <p class="hidden">Reading: て (te), Example: "てがみ" (tegami) - "letter"</p>
+          </div>
+        
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>と</p>
+            <p class="hidden">Reading: と (to), Example: "ともだち" (tomodachi) - "friend"</p>
+          </div>
+        
+          <!-- な に ぬ ね の -->
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>な</p>
+            <p class="hidden">Reading: な (na), Example: "なまえ" (namae) - "name"</p>
+          </div>
+        
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>に</p>
+            <p class="hidden">Reading: に (ni), Example: "にんぎょう" (ningyou) - "doll"</p>
+          </div>
+        
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>ぬ</p>
+            <p class="hidden">Reading: ぬ (nu), Example: "ぬいぐるみ" (nuigurumi) - "stuffed animal"</p>
+          </div>
+        
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>ね</p>
+            <p class="hidden">Reading: ね (ne), Example: "ねこ" (neko) - "cat"</p>
+          </div>
+        
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>の</p>
+            <p class="hidden">Reading: の (no), Example: "のり" (nori) - "seaweed"</p>
+          </div>
+        
+          <!-- は ひ ふ へ ほ -->
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>は</p>
+            <p class="hidden">Reading: は (ha), Example: "はな" (hana) - "flower"</p>
+          </div>
+        
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>ひ</p>
+            <p class="hidden">Reading: ひ (hi), Example: "ひこうき" (hikouki) - "airplane"</p>
+          </div>
+        
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>ふ</p>
+            <p class="hidden">Reading: ふ (fu), Example: "ふく" (fuku) - "clothes"</p>
+          </div>
+        
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>へ</p>
+            <p class="hidden">Reading: へ (he), Example: "へや" (heya) - "room"</p>
+          </div>
+        
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>ほ</p>
+            <p class="hidden">Reading: ほ (ho), Example: "ほし" (hoshi) - "star"</p>
+          </div>
+        
+          <!-- ま み む め も -->
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>ま</p>
+            <p class="hidden">Reading: ま (ma), Example: "まど" (mado) - "window"</p>
+          </div>
+        
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>み</p>
+            <p class="hidden">Reading: み (mi), Example: "みず" (mizu) - "water"</p>
+          </div>
+        
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>む</p>
+            <p class="hidden">Reading: む (mu), Example: "むし" (mushi) - "insect"</p>
+          </div>
+        
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>め</p>
+            <p class="hidden">Reading: め (me), Example: "めがね" (megane) - "glasses"</p>
+          </div>
+        
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>も</p>
+            <p class="hidden">Reading: も (mo), Example: "もも" (momo) - "peach"</p>
+          </div>
+        
+          <!-- や ゆ よ -->
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>や</p>
+            <p class="hidden">Reading: や (ya), Example: "やま" (yama) - "mountain"</p>
+          </div>
+        
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>ゆ</p>
+            <p class="hidden">Reading: ゆ (yu), Example: "ゆき" (yuki) - "snow"</p>
+          </div>
+        
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>よ</p>
+            <p class="hidden">Reading: よ (yo), Example: "よる" (yoru) - "night"</p>
+          </div>
+        
+          <!-- ら り る れ ろ -->
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>ら</p>
+            <p class="hidden">Reading: ら (ra), Example: "らいおん" (raion) - "lion"</p>
+          </div>
+        
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>り</p>
+            <p class="hidden">Reading: り (ri), Example: "りんご" (ringo) - "apple"</p>
+          </div>
+        
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>る</p>
+            <p class="hidden">Reading: る (ru), Example: "るす" (rusu) - "absence"</p>
+          </div>
+        
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>れ</p>
+            <p class="hidden">Reading: れ (re), Example: "れんしゅう" (renshuu) - "practice"</p>
+          </div>
+        
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>ろ</p>
+            <p class="hidden">Reading: ろ (ro), Example: "ろうか" (rouka) - "corridor"</p>
+          </div>
+        
+          <!-- わ を ん -->
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>わ</p>
+            <p class="hidden">Reading: わ (wa), Example: "わたし" (watashi) - "I, me"</p>
+          </div>
+        
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>を</p>
+            <p class="hidden">Reading: を (wo), Example: "ごはんを" (gohan wo) - "rice" (particle)</p>
+          </div>
+        
+          <div class="flashcard" onclick="toggleCard(this)">
+            <p>ん</p>
+            <p class="hidden">Reading: ん (n), Example: "さん" (san) - "three"</p>
+          </div>
+        </div>    
+        <!-- Continue with the full Hiragana chart (all 46 characters) -->
+      </div>
+    
+       <!-- Vocabulary Section -->
+  <div id="vocabulary" class="content">
+    <h2>Vocabulary</h2>
+    <h3>Nouns</h3>
+    <!-- 100 Vocabulary Flashcards -->
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>犬</p>
+      <p class="hidden">Reading: いぬ (inu), Meaning: Dog</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>猫</p>
+      <p class="hidden">Reading: ねこ (neko), Meaning: Cat</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>本</p>
+      <p class="hidden">Reading: ほん (hon), Meaning: Book</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>学校</p>
+      <p class="hidden">Reading: がっこう (gakkou), Meaning: School</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>車</p>
+      <p class="hidden">Reading: くるま (kuruma), Meaning: Car</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>友達</p>
+      <p class="hidden">Reading: ともだち (tomodachi), Meaning: Friend</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>先生</p>
+      <p class="hidden">Reading: せんせい (sensei), Meaning: Teacher</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>水</p>
+      <p class="hidden">Reading: みず (mizu), Meaning: Water</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>日本</p>
+      <p class="hidden">Reading: にほん (nihon), Meaning: Japan</p>
+    </div>
+    <div class="flashcard" onclick="toggleCard(this)">
+      <p>家</p>
+      <p class="hidden">Reading: いえ (ie), Meaning: House</p>
+    </div>
+    <!-- Continue with more vocabulary words -->
+  </div>
+
+    <!-- More Hiragana Flashcards can go here -->
+  </div>
+
+  <script>
+    function toggleCard(card) {
+      const hidden = card.querySelector('.hidden');
+      hidden.style.display = hidden.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+
+  <footer>
+    <p>Made for learning Japanese. By Sathvik Harish <a href="#">Learn more</a></p>
+  </footer>
+<h1>By Sathvik Harish</h1>
+</body>
+</html>
